@@ -2,7 +2,12 @@ import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 channel = [13,19,12]
 for c in channel:
+
 	GPIO.setup(c,GPIO.OUT)
+	p = GPIO.PWM(c,10)
+
+
+p.start(30)
 try:
 	while True:
 		try:
